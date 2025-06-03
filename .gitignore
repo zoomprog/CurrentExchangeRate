@@ -1,4 +1,9 @@
-venv/
+# Общие файлы Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.sqlite3
+
+# Виртуальные окружения
+venv/
+env/
+.venv/

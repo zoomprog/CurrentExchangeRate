@@ -1,12 +1,14 @@
-import requests
-import time
+import time, os, requests
 from django.http import JsonResponse
 from django.core.cache import cache
 from .models import ExchangeRate
+from dotenv import load_dotenv
 
+# Загрузка переменных окружения из .env
+load_dotenv()
 
 def get_usd_to_rub():
-    api_key = "8beacbecb6c9379430ead39d"  # Замените на ваш ключ
+    api_key = os.getenv("EXCHANGE_RATE_API")  # Замените на ваш ключ
     url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/USD"
 
     try:
